@@ -22,21 +22,24 @@
 .hide {
     display: none;
 }
-
+.controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .controls .fa-solid {
     color: var(--iconGray);
 }
 .controls .fa-solid:hover {
     color: var(--iconActive);
 }
-.movieItem {
-    /*border: var(--cardBorder) 0.25em solid;*/
-    /*background-color: var(--cardBackground);*/
-    /*border: red 2px solid;*/
-    /*background-color: grey;*/
+.card {
     width: 250px;
-    border: 5px solid black;
 }
-.movieItem:hover {
+.card:hover {
     scale: 1.1;
 }
