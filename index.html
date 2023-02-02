@@ -13,23 +13,30 @@
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/4d0b40d330.js" crossorigin="anonymous"></script>
 </head>
-<body class="d-flex flex-column m-4 bg-secondary">
-<!--loading message-->
-<div class="" id="loading">Loading...</div>
+<body class="d-flex flex-column m-4">
+        <img
+                class="demo-bg m-0 p-0"
+                src="image/background.jpg"
+                alt=""
+        >
+<!--    <div class="demo-wrap">-->
+<!--    </div>-->
+    <!--loading message-->
+    <div class="" id="loading">Loading...</div>
 
-<!--adding movies form-->
-<div class="addMoviesForm pb-4">
-    <form>
-        <label for="mtitle">Movie Title:</label><br>
-        <input type="text" id="mtitle" name="mtitle"><br>
-        <label for="mrating">Rating:</label><br>
-        <input type="text" id="mrating" name="mrating">
-        <input id="addMoviesSubmitBtn" type="submit" value="Submit">
-    </form>
-</div>
+    <!--adding movies form-->
+    <div class="addMoviesForm pb-4">
+        <form>
+            <label for="mtitle">Movie Title:</label><br>
+            <input type="text" id="mtitle" name="mtitle"><br>
+            <label for="mrating">Rating:</label><br>
+            <input type="text" id="mrating" name="mrating">
+            <input id="addMoviesSubmitBtn" type="submit" value="Submit">
+        </form>
+    </div>
 
-<!--movie lists-->
-<div class="d-flex flex-wrap justify-content-between" id="movieContent"></div>
+    <!--movie lists-->
+    <div class="d-flex flex-wrap justify-content-between" id="movieContent"></div>
 
 
 <!--Bootstrap JS-->
