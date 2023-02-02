@@ -44,9 +44,13 @@ function getMovies () {
                     <div>Staring:${value.staring}</div>
                     <div class="fst-italic">"${value.tagline}"</div>
                 </div>
-                <div class="controls d-flex flex-column ps-2">
-                    <i class="fa-solid fa-xmark flex-grow-1"></i>
-                    <i class="fa-solid fa-pen"></i>
+                <div class="controls d-flex flex-column ps-2 justify-content-between">
+                    <button  type="button" class="btn btn-light" >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editMovieModal">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
                 </div>
             </div>
             `;
@@ -56,9 +60,9 @@ function getMovies () {
 }
 
 //add movie button functionality
-$("#addMovieBtn").click(function(){
-    
-});
+// $("#addMovieBtn").click(function(){
+//
+// });
 
 //submit button functionality for new movies
 $("#addMoviesSubmitBtn").click(function(event){
@@ -81,6 +85,14 @@ $("#addMoviesSubmitBtn").click(function(event){
         // let movieRating = document.getElementById('mrating').value;
         // addMovie(movieTitle,movieRating);
     });
+
+});
+
+//submit button functionality for editing movies
+$("#editMoviesSubmitBtn").click(function(event){
+    event.preventDefault();
+    console.log("working");
+
 
 });
 
