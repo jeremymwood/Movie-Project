@@ -20,9 +20,6 @@
         alt=""
 >
 
-<!--movie lists-->
-<div class="d-flex flex-wrap justify-content-between" id="movieContent"></div>
-
 <!--loading message-->
 <div class="" id="loading">Loading...</div>
 
@@ -61,7 +58,7 @@
 </div>
 
 <!--adding movies form-->
-<div class="addMoviesForm pb-4" id="addMovieModal">
+<div class="modal fade addMoviesForm pb-4" id="addMovieModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -84,23 +81,36 @@
 </div>
 
 <!--edit movie modal-->
-<div class="movieModal" id="editMovieModal">
-    <h3 class="editModalHeader">Edit Movie</h3>
-    <form class="editModalContent">
-        <label for="editmtitle">Movie Title:</label>
-        <input type="text" id="editmtitle" name="editmtitle" required><br>
-        <label for="editmrating">Rating:</label>
-        <input type="text" id="editmrating" name="editmrating" required><br>
-        <label for="editmgenre">Genre:</label>
-        <input type="text" id="editmgenre" name="editmgenre"><br>
-        <label for="editmdirector">Director:</label>
-        <input type="text" id="editmdirector" name="editmdirector"><br>
-        <label for="editmstaring">Starring:</label>
-        <input type="text" id="editmstaring" name="editmstaring"><br>
-        <input id="editMoviesSubmitBtn" type="submit" value="Submit">
-    </form>
+<div class="modal fade" id="editMovieModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="editModalHeader">Edit Movie</h3>
+            </div>
+            <div class="modal-body">
+                <form class="editModalContent">
+                    <label for="editmtitle">Movie Title:</label>
+                    <input type="text" id="editmtitle" name="editmtitle" required><br>
+                    <label for="editmrating">Rating:</label>
+                    <input type="text" id="editmrating" name="editmrating" required><br>
+                    <label for="editmgenre">Genre:</label>
+                    <input type="text" id="editmgenre" name="editmgenre"><br>
+                    <label for="editmdirector">Director:</label>
+                    <input type="text" id="editmdirector" name="editmdirector"><br>
+                    <label for="editmstaring">Starring:</label>
+                    <input type="text" id="editmstaring" name="editmstaring"><br>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <input class="btn btn-light" id="editMoviesSubmitBtn" type="submit" value="Submit">
+            </div>
+        </div>
+    </div>
 </div>
 
+<!--movie lists-->
+<div class="d-flex flex-wrap justify-content-between" id="movieContent"></div>
 
 <!--Bootstrap JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
