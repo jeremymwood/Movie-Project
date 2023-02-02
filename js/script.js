@@ -35,16 +35,16 @@ function getMovies () {
         let movies= "";
         $.each(data, function(data,value){
             movies += `
-            <div class="movieItem card d-flex flex-row m-2 p-2" id="moveieItem${value.id}">
+            <div class="movieItem card border-dark d-flex flex-row m-2 p-2" id="moveieItem${value.id}">
                 <div class="flex-grow-1">
-                    <div class="fs-5 fw-bolder">${value.title}</div>
+                    <div class="card-header fs-5 fw-bolder">${value.title}</div>
                     <div>Rating: ${value.rating}/10</div>
                     <div>Genre: ${value.genre}</div>
                     <div>Director: ${value.director}</div>
                     <div>Staring:${value.staring}</div>
                     <div class="fst-italic">"${value.tagline}"</div>
                 </div>
-                <div class="controls d-flex flex-column ps-2">
+                <div class="controls ps-2 m-2">
                     <i class="fa-solid fa-xmark flex-grow-1"></i>
                     <i class="fa-solid fa-pen"></i>
                 </div>

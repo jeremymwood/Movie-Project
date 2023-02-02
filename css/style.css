@@ -1,10 +1,18 @@
-* {
-
+:root {
+    --iconGray: #a29b9b;
+    --iconActive: #000000;
+    --cardBorder: #cef5e6;
+    --cardBackground: #6decbf;
 }
-
-/*body {*/
-/*    background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgb(208, 0, 255));*/
-/*}*/
+.demo-bg {
+    width: 100vw;
+    position: absolute;
+    padding: 7px;
+    opacity: 0.4;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
 
 #loading {
     position: fixed;
@@ -14,14 +22,21 @@
 .hide {
     display: none;
 }
+
+.controls .fa-solid {
+    color: var(--iconGray);
+}
+.controls .fa-solid:hover {
+    color: var(--iconActive);
+}
 .movieItem {
+    /*border: var(--cardBorder) 0.25em solid;*/
+    /*background-color: var(--cardBackground);*/
+    /*border: red 2px solid;*/
+    /*background-color: grey;*/
     width: 250px;
+    border: 5px solid black;
 }
 .movieItem:hover {
     scale: 1.1;
 }
-
-
-/*.movieLists{*/
-/*    display:none;*/
-/*}*/
