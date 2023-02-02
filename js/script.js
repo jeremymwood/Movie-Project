@@ -26,7 +26,7 @@ function startDelay(){
             getMovies();
     }, 1000);
 }
-$(window).load(startDelay());
+startDelay();
 
 //ajax request to get a listing of all movies
 function getMovies () {
@@ -54,56 +54,44 @@ function getMovies () {
 
 //submit button functionality for new movies
 $("#addMoviesSubmitBtn").click(function(event){
-    $.ajax("url", {
-        type: "POST",
-        movies: {
-            title: $("#mtitle").val(),
-            rating: $("#mrating").val()
-        }
+    event.preventDefault();
+    console.log("working");
+    const  movie = {
+        title: $("#mtitle").val(),
+        rating: $("#mrating").val()
+    };
+    const options = {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(movie),
+    };
+    fetch(url,options)
+        .then(function(response){
+        // let movieTitle = document.getElementById('mtitle').value;
+        // let movieRating = document.getElementById('mrating').value;
+        // addMovie(movieTitle,movieRating);
     });
 
-    event.preventDefault();
-    console.log("working")
-    // $.post(url, {
-    //     movies: {
-    //         title: $("#mtitle").val(),
-    //         rating: $("#mrating").val()
-    //     }
-    // }).done(function(movies) {
-    //     $("#movieContent").prepend(`
-    //         <div class="movieItem">
-    //             <div>${("#mtitle").val()}</div>
-    //             <div>${("#mrating").val()}</div>
-    //         </div>`
-    //     );
 });
 
-function postMovie () {
+// function to add a movie; possibly useful later
+// function addMovie(inputTitle, inputRating){
+//     let movie = {};
+//     let lastID = movies.length;
+//     movie.id = lastID+1;
+//     movie.title = inputTitle;
+//     movie.rating = inputRating;
+//     console.log(movie);
+//     $("#movieContent").prepend($("movie"));
+// }
 
-    $("#addMoviesSubmitBtn").click(function(event) {
-        $.post( url, { title: $("#mtitle").val(), rating: $("#mrating").val() } )
-        $("#movieContent").prepend(`
-                <div class="movieItem">
-                    <div>${("#mtitle").val()}</div>
-                    <div>${("#mrating").val()}</div>
-                </div>`
-        );
-    });
 
-    // $.post( url, { title: $("#mtitle").val(), rating: $("#mrating").val() } );
-    //
-    //
-    // $.post(url).done(function (data) {
-    //     let movie= "";
-    //     $("#addMoviesSubmitBtn").click(function(event) {
-    //         $("#movieContent").prepend(`
-    //             <div class="movieItem">
-    //                 <div>${("#mtitle").val()}</div>
-    //                 <div>${("#mrating").val()}</div>
-    //             </div>`
-    //         );
-    //     });
 
-    // $("#movieContent").html(movies);
-    // });
-}
+
+
+
+
+
+
