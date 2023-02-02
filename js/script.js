@@ -55,6 +55,11 @@ function getMovies () {
     });
 }
 
+//add movie button functionality
+$("#addMovieBtn").click(function(){
+    
+});
+
 //submit button functionality for new movies
 $("#addMoviesSubmitBtn").click(function(event){
     event.preventDefault();
@@ -89,6 +94,10 @@ $("#addMoviesSubmitBtn").click(function(event){
 //     console.log(movie);
 //     $("#movieContent").prepend($("movie"));
 // }
+
+//edit modal functionality
+let editModal = document.querySelector("#editMovieModal");
+let editModalBtn = document.querySelector("#editMoviesSubmitBtn");
 
 
 
