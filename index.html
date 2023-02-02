@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Movie Project</title>
     <!--Custom Css-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,15 +13,12 @@
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/4d0b40d330.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="d-flex m-4">
 <!--loading message-->
-<div id="loading">Loading...</div>
-
-<!--movie lists-->
-<div id="movieContent"></div>
+<div class="" id="loading">Loading...</div>
 
 <!--adding movies form-->
-<div class="addMoviesForm">
+<div class="addMoviesForm pb-4">
     <form>
         <label for="mtitle">Movie Title:</label><br>
         <input type="text" id="mtitle" name="mtitle"><br>
@@ -30,6 +27,10 @@
         <input id="addMoviesSubmitBtn" type="submit" value="Submit">
     </form>
 </div>
+
+<!--movie lists-->
+<div id="movieContent"></div>
+
 
 <!--Bootstrap JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
