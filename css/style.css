@@ -1,23 +1,21 @@
-/*#loading {*/
-/*    !*background: url('spinner.gif') no-repeat center center;*!*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    z-index: 9999999;*/
+* {
+
+}
+
+/*body {*/
+/*    background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgb(208, 0, 255));*/
 /*}*/
 
 #loading {
     position: fixed;
-    /*background: rgba(0,0,0,0.8);*/
-    /*width: 100%;*/
-    /*height: 100%;*/
     top: 0;
     left: 0;
 }
 .hide {
     display: none;
+}
+.movieItem:hover {
+    scale: 1.1;
 }
 
 /*.movieLists{*/
