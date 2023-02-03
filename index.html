@@ -30,7 +30,7 @@
     <header class="">
         <!--search by btn-->
         <form class="search">
-            <input class="searchForm" type="search" placeholder="Search" aria-label="Search">
+            <input id="searchbar" class="searchForm" type="search" placeholder="Search" aria-label="Search">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 
@@ -40,7 +40,7 @@
         <!--search by and sort by-->
         <div class="dropdown">
             <button class="btn btn-light dropdown-toggle" type="button" id="sortByBtn" data-bs-toggle="dropdown"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <ul id="movieSelection" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Title</a></li>
                 <li><a class="dropdown-item" href="#">Rating</a></li>
                 <li><a class="dropdown-item" href="#">Genre</a></li>
@@ -78,7 +78,6 @@
             </div>
         </div>
     </div>
-
     <!--edit movie modal-->
     <div class="modal fade" id="editMovieModal" aria-hidden="true">
         <div class="modal-dialog">
@@ -98,6 +97,8 @@
                         <input type="text" id="editmdirector" name="editmdirector"><br>
                         <label for="editmstaring">Starring:</label>
                         <input type="text" id="editmstaring" name="editmstaring"><br>
+                        <label for="editmtagline">Tagline:</label>
+                        <input type="text" id="editmtagline" name="editmtagline"><br>
                     </form>
                 </div>
                 <div class="modal-footer">
