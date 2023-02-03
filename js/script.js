@@ -36,7 +36,7 @@ function getMovies () {
         $.each(data, function(data,value){
             movies += `
            <div class="col">
-                <div class="movieItem card bg-light border border-2 d-flex flex-row p-3 w-100 h-100" id="moveieItem${value.id}">
+                <div class="movieItem card bg-transparent border border-2 d-flex flex-row p-3 w-100 h-100" id="moveieItem${value.id}">
                     <div class="flex-grow-1 pe-3">
                         <div class="cardTitle fs-5 fw-bolder">${value.title}</div>
                         <div>Rating: ${value.rating}/10</div>
