@@ -1,24 +1,86 @@
 :root {
     --iconGray: #a29b9b;
-    --iconActive: #000000;
     --cardBorder: #cef5e6;
     --cardBackground: #6decbf;
-}
-.demo-bg {
-    width: 100vw;
-    position: absolute;
-    padding: 7px;
-    opacity: 0.4;
-    margin: 0;
-    left: 0;
-    top: 0;
+    /*box-sizing: border-box;*/
+    /*lala land color scheme*/
+    --purlpleDark: #1F0F59;
+    --purlpleMed: #2D1F8C;
+    --purlpleLight: rgba(72, 30, 145, 0.46);
+    --yellow: #F2AC57;
+
+
 }
 
-#loading {
-    position: fixed;
-    top: 0;
-    left: 0;
+* {
+    font-family: 'Spline Sans Mono', monospace;
+    box-sizing: border-box;
+    color: white;
+
 }
+body {
+    /*background-color: var();*/
+    background-image: linear-gradient(to bottom right, var(--purlpleDark), var(--purlpleLight));
+    background-repeat: no-repeat;
+
+}
+header {
+    display: flex;
+    flex-direction: row;
+}
+h1 {
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.search, .dropdown {
+    float: left;
+    align-self: center;
+}
+label, input {
+    color: var(--purlpleDark);
+}
+
+/*.imageContainer {*/
+/*    top: 0;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    position: absolute;*/
+/*    overflow: hidden;*/
+/*}*/
+/*.demo-bg {*/
+/*    !*min-height: 100%;*!*/
+/*    !*background-size: auto;*!*/
+/*    position: absolute;*/
+/*    padding: 7px;*/
+/*    opacity: 0.4;*/
+/*    margin: 0;*/
+/*    !*left: 0;*!*/
+/*    !*top: 0;*!*/
+/*    z-index: -1;*/
+
+/*    !*z-index: -10;*!*/
+/*    !*opacity: 50%;*!*/
+/*    !*position: absolute;*!*/
+/*    !*!*top: 0;*!*!*/
+/*    !*!*bottom: 0;*!*!*/
+/*    !*!*left: 0;*!*!*/
+/*    !*!*right: 0;*!*!*/
+/*    !*min-width: 100%;*!*/
+/*    !*!*min-height: 100%;*!*!*/
+/*    !*!*width: auto;*!*!*/
+/*    !*height: auto;*!*/
+/*    !*overflow: hidden;*!*/
+/*    !*margin: auto;*!*/
+/*}*/
+
+
+/*#loading {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*}*/
 .hide {
     display: none;
 }
@@ -31,15 +93,203 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.controls .fa-solid {
+.fa-solid {
     color: var(--iconGray);
 }
-.controls .fa-solid:hover {
-    color: var(--iconActive);
+.fa-solid:hover {
+    color: var(--yellow);
+    scale: 1.3;
 }
 .card {
-    width: 250px;
+    width: 20%;
+    color: var(--purlpleMed);
+
 }
 .card:hover {
-    scale: 1.1;
+    /*scale: 1.1;*/
+    z-index: 1;
+    box-shadow: -0.5em -0.5em 0.5em var(--yellow);
+    left: .5em;
+    top: .5em;
+
+}
+button:focus {
+    cursor: pointer;
+    outline-color: transparent;
+    outline-style: none;
+}
+
+#loading {
+    position:absolute;
+    width:600px;
+    height:36px;
+    left:50%;
+    top:40%;
+    margin-left:-300px;
+    overflow:visible;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:default;
+}
+
+#loading div {
+    position:absolute;
+    width:20px;
+    height:36px;
+    font-size: 3em;
+    opacity:0;
+    animation:move 2s linear infinite;
+    -o-animation:move 2s linear infinite;
+    -moz-animation:move 2s linear infinite;
+    -webkit-animation:move 2s linear infinite;
+    transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    color: black;
+}
+
+#loading div:nth-child(2) {
+    animation-delay:0.2s;
+    -o-animation-delay:0.2s;
+    -moz-animation-delay:0.2s;
+    -webkit-animation-delay:0.2s;
+}
+#loading div:nth-child(3) {
+    animation-delay:0.4s;
+    -o-animation-delay:0.4s;
+    -webkit-animation-delay:0.4s;
+    -webkit-animation-delay:0.4s;
+}
+#loading div:nth-child(4) {
+    animation-delay:0.6s;
+    -o-animation-delay:0.6s;
+    -moz-animation-delay:0.6s;
+    -webkit-animation-delay:0.6s;
+}
+#loading div:nth-child(5) {
+    animation-delay:0.8s;
+    -o-animation-delay:0.8s;
+    -moz-animation-delay:0.8s;
+    -webkit-animation-delay:0.8s;
+}
+#loading div:nth-child(6) {
+    animation-delay:1s;
+    -o-animation-delay:1s;
+    -moz-animation-delay:1s;
+    -webkit-animation-delay:1s;
+}
+#loading div:nth-child(7) {
+    animation-delay:1.2s;
+    -o-animation-delay:1.2s;
+    -moz-animation-delay:1.2s;
+    -webkit-animation-delay:1.2s;
+}
+
+@keyframes move {
+    0% {
+        left:0;
+        opacity:0;
+    }
+    35% {
+        left: 41%;
+        -moz-transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    65% {
+        left:59%;
+        -moz-transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    100% {
+        left:100%;
+        -moz-transform:rotate(-180deg);
+        -webkit-transform:rotate(-180deg);
+        -o-transform:rotate(-180deg);
+        transform:rotate(-180deg);
+        opacity:0;
+    }
+}
+
+@-moz-keyframes move {
+    0% {
+        left:0;
+        opacity:0;
+    }
+    35% {
+        left:41%;
+        -moz-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    65% {
+        left:59%;
+        -moz-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    100% {
+        left:100%;
+        -moz-transform:rotate(-180deg);
+        transform:rotate(-180deg);
+        opacity:0;
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+        left:0;
+        opacity:0;
+    }
+    35% {
+        left:41%;
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    65% {
+        left:59%;
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    100% {
+        left:100%;
+        -webkit-transform:rotate(-180deg);
+        transform:rotate(-180deg);
+        opacity:0;
+    }
+}
+
+@-o-keyframes move {
+    0% {
+        left:0;
+        opacity:0;
+    }
+    35% {
+        left:41%;
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    65% {
+        left:59%;
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    100% {
+        left:100%;
+        -o-transform:rotate(-180deg);
+        transform:rotate(-180deg);
+        opacity:0;
+    }
 }
