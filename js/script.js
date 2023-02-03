@@ -24,9 +24,10 @@ function startDelay(){
     setTimeout(function() {
         $('#loading').addClass('hide');
         getMovies();
-    }, 2000);
+    }, 500);
 }
 startDelay();
+
 
 //ajax request to get a listing of all movies
 function getMovies () {
@@ -46,7 +47,7 @@ function getMovies () {
                         <div class="fst-italic">"${value.tagline}"</div>
                     </div>
                     <div class="controls d-flex flex-column">
-                        <button type="button" class="btn" >
+                        <button type="button" class="btn closeButton" >
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                         <button type="button" class="btn mb-2" data-bs-toggle="modal" data-bs-target="#editMovieModal">
@@ -60,6 +61,18 @@ function getMovies () {
         $("#movieContent").html(movies);
     });
 }
+//
+
+//delete button functionality for deleting movie cards
+$(document).on("click", '.closeButton', function(event){
+    event.preventDefault();
+    // console.log("delete button working");
+    let thisId = this.closest(".movieItem").id;
+    console.log(thisId);
+
+    // $.get(url)
+
+});
 
 //add movie button functionality
 // $("#addMovieBtn").click(function(){
@@ -97,11 +110,35 @@ $("#editMoviesSubmitBtn").click(function(event){
 
 });
 
-//submit button functionality for editing movies
-$("#editMoviesSubmitBtn").click(function(event){
+//search bar functionality
+$("#searchBtn").click(function(event){
     event.preventDefault();
     console.log("working");
+    let input = document.getElementById("searchInput").value;
+    input.toLowerCase();
+    let movieTitles = document.getElementsByClassName("movieTitles");
+    for (let i = 0; i < movieTitles.length; i++) {
+        if(!movieTitles[i].innerHTML.toLowerCase().includes(input)){
+            movieTitles[i].style.display = "none";
+        }else {
+            movieTitles[i].style.display = "block";
+        }
+    }
+});
 
+//filter functionality
+$("#titleFilter").click(function(){
+    console.log("working");
+    let sortedCards = $(".movieCards").sort(function(a,b){
+        return $(a).find(".movieTitles").text().localeCompare()($(b).find(".movieTitles").text());
+    })
+    $("#movieContent").remove(".movieCards").append(sortedCards);
+});
+$("#ratingFilter").click(function(){
+    console.log("working");
+});
+$("#genreFilter").click(function(){
+    console.log("working");
 });
 
 // function to add a movie; possibly useful later
@@ -116,12 +153,5 @@ $("#editMoviesSubmitBtn").click(function(event){
 // }
 
 //edit modal functionality
-let editModal = document.querySelector("#editMovieModal");
-let editModalBtn = document.querySelector("#editMoviesSubmitBtn");
-
-// $('.card').hover(.css('color', random_color));
-var hexArray = ['#hexVal','#hexVal','#hexval', '#hexval']
-var randomColor = hexArray[Math.floor(Math.random() * hexArray.length)];
-
-$("#divId").css("color",randomColor); //A class selector would work too
-$("#divId").css("color",randomColor); //A class selector would work too
+// let editModal = document.querySelector("#editMovieModal");
+// let editModalBtn = document.querySelector("#editMoviesSubmitBtn");
