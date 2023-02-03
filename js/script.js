@@ -22,9 +22,9 @@ const url = 'https://round-puffy-blizzard.glitch.me/movies';
 // loading message function to disappear and show movie lists after 5 seconds
 function startDelay(){
     setTimeout(function() {
-            $('#loading').addClass('hide');
-            getMovies();
-    }, 1000);
+        $('#loading').addClass('hide');
+        getMovies();
+    }, 2000);
 }
 startDelay();
 
@@ -35,18 +35,24 @@ function getMovies () {
         let movies= "";
         $.each(data, function(data,value){
             movies += `
-            <div class="movieItem card d-flex flex-row m-2 p-2" id="moveieItem${value.id}">
-                <div class="flex-grow-1">
-                    <div class="fs-5 fw-bolder">${value.title}</div>
-                    <div>Rating: ${value.rating}/10</div>
-                    <div>Genre: ${value.genre}</div>
-                    <div>Director: ${value.director}</div>
-                    <div>Staring:${value.staring}</div>
-                    <div class="fst-italic">"${value.tagline}"</div>
-                </div>
-                <div class="controls d-flex flex-column ps-2">
-                    <i class="fa-solid fa-xmark flex-grow-1"></i>
-                    <i class="fa-solid fa-pen"></i>
+           <div class="col">
+                <div class="movieItem card bg-transparent border border-2 d-flex flex-row p-3 w-100 h-100" id="moveieItem${value.id}">
+                    <div class="flex-grow-1 pe-3">
+                        <div class="cardTitle fs-5 fw-bolder">${value.title}</div>
+                        <div>Rating: ${value.rating}/10</div>
+                        <div>Genre: ${value.genre}</div>
+                        <div>Director: ${value.director}</div>
+                        <div>Staring:${value.staring}</div>
+                        <div class="fst-italic">"${value.tagline}"</div>
+                    </div>
+                    <div class="controls d-flex flex-column">
+                        <button type="button" class="btn" >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <button type="button" class="btn mb-2" data-bs-toggle="modal" data-bs-target="#editMovieModal">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             `;
@@ -56,9 +62,9 @@ function getMovies () {
 }
 
 //add movie button functionality
-$("#addMovieBtn").click(function(){
-    
-});
+// $("#addMovieBtn").click(function(){
+//
+// });
 
 //submit button functionality for new movies
 $("#addMoviesSubmitBtn").click(function(event){
@@ -77,10 +83,18 @@ $("#addMoviesSubmitBtn").click(function(event){
     };
     fetch(url,options)
         .then(function(response){
-        // let movieTitle = document.getElementById('mtitle').value;
-        // let movieRating = document.getElementById('mrating').value;
-        // addMovie(movieTitle,movieRating);
-    });
+            // let movieTitle = document.getElementById('mtitle').value;
+            // let movieRating = document.getElementById('mrating').value;
+            // addMovie(movieTitle,movieRating);
+        });
+
+});
+
+//submit button functionality for editing movies
+$("#editMoviesSubmitBtn").click(function(event){
+    event.preventDefault();
+    console.log("working");
+
 
 });
 
@@ -99,11 +113,8 @@ $("#addMoviesSubmitBtn").click(function(event){
 let editModal = document.querySelector("#editMovieModal");
 let editModalBtn = document.querySelector("#editMoviesSubmitBtn");
 
+// $('.card').hover(.css('color', random_color));
+var hexArray = ['#hexVal','#hexVal','#hexval', '#hexval']
+var randomColor = hexArray[Math.floor(Math.random() * hexArray.length)];
 
-
-
-
-
-
-
-
+$("#divId").css("color",randomColor); //A class selector would work too
