@@ -22,7 +22,7 @@ body {
     /*background-color: var();*/
     background-image: linear-gradient(to bottom right, var(--purlpleDark), var(--purlpleLight));
     background-repeat: no-repeat;
-
+    height: 100vh;
 }
 header {
     display: flex;
