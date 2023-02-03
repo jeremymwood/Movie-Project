@@ -95,6 +95,12 @@ $("#editMoviesSubmitBtn").click(function(event){
     event.preventDefault();
     console.log("working");
 
+});
+
+//submit button functionality for editing movies
+$("#editMoviesSubmitBtn").click(function(event){
+    event.preventDefault();
+    console.log("working");
 
 });
 
@@ -117,4 +123,5 @@ let editModalBtn = document.querySelector("#editMoviesSubmitBtn");
 var hexArray = ['#hexVal','#hexVal','#hexval', '#hexval']
 var randomColor = hexArray[Math.floor(Math.random() * hexArray.length)];
 
+$("#divId").css("color",randomColor); //A class selector would work too
 $("#divId").css("color",randomColor); //A class selector would work too

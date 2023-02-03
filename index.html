@@ -23,103 +23,105 @@
 <!--        >-->
 <!--    </div>-->
 
-<!--loading message-->
-<div id="loading">
-    <div>G</div>
-    <div>N</div>
-    <div>I</div>
-    <div>D</div>
-    <div>A</div>
-    <div>O</div>
-    <div>L</div>
-</div>
 
-<header class="">
-    <!--search by btn-->
-    <form class="search">
-        <input class="searchForm" type="search" placeholder="Search" aria-label="Search">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
-
-    <h1 class="title">UnRated</h1>
-
-    <!--sort by btn-->
-    <!--search by and sort by-->
-    <div class="dropdown">
-        <button class="btn btn-light dropdown-toggle" type="button" id="sortByBtn" data-bs-toggle="dropdown"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Title</a></li>
-            <li><a class="dropdown-item" href="#">Rating</a></li>
-            <li><a class="dropdown-item" href="#">Genre</a></li>
-        </ul>
+    <!--loading message-->
+    <div id="loading">
+        <div>G</div>
+        <div>N</div>
+        <div>I</div>
+        <div>D</div>
+        <div>A</div>
+        <div>O</div>
+        <div>L</div>
     </div>
 
-    <!--navbar-->
-    <nav class="navbar ps-5">
-        <button class="navbar-toggler bg-light" id="addMovieBtn" type="button" data-bs-toggle="modal" data-bs-target="#addMovieModal">
-            <i class="fa-solid fa-plus"></i>
-        </button>
-    </nav>
+    <header class="">
+        <!--search by btn-->
+        <form class="search">
+            <input class="searchForm" type="search" placeholder="Search" aria-label="Search">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
 
-</header>
+        <h1 class="title">UnRated</h1>
 
-<!--adding movies form-->
-<div class="modal fade addMoviesForm pb-4 text-dark" id="addMovieModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Add Movie</h3>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label for="mtitle">Movie Title:</label><br>
-                    <input type="text" id="mtitle" name="mtitle"><br>
-                    <label for="mrating">Rating:</label><br>
-                    <input type="text" id="mrating" name="mrating"><br>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                <input id="addMoviesSubmitBtn" class="btn btn-light" type="submit" value="Submit">
+        <!--sort by btn-->
+        <!--search by and sort by-->
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="sortByBtn" data-bs-toggle="dropdown"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Title</a></li>
+                <li><a class="dropdown-item" href="#">Rating</a></li>
+                <li><a class="dropdown-item" href="#">Genre</a></li>
+            </ul>
+        </div>
+
+        <!--navbar-->
+        <nav class="navbar ps-5">
+            <button class="navbar-toggler bg-light" id="addMovieBtn" type="button" data-bs-toggle="modal" data-bs-target="#addMovieModal">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </nav>
+
+    </header>
+
+    <!--adding movies form-->
+    <div class="modal fade addMoviesForm pb-4 text-dark" id="addMovieModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add Movie</h3>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="mtitle">Movie Title:</label><br>
+                        <input type="text" id="mtitle" name="mtitle"><br>
+                        <label for="mrating">Rating:</label><br>
+                        <input type="text" id="mrating" name="mrating"><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <input id="addMoviesSubmitBtn" class="btn btn-light" type="submit" value="Submit">
+                </div>
+>>>>>>> 5c285b4aaba8229cd851e0bca5829e4b07e0708d
             </div>
         </div>
     </div>
-</div>
 
-<!--edit movie modal-->
-<div class="modal fade" id="editMovieModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="editModalHeader">Edit Movie</h3>
-            </div>
-            <div class="modal-body">
-                <form class="editModalContent">
-                    <label for="editmtitle">Movie Title:</label>
-                    <input type="text" id="editmtitle" name="editmtitle" required><br>
-                    <label for="editmrating">Rating:</label>
-                    <input type="text" id="editmrating" name="editmrating" required><br>
-                    <label for="editmgenre">Genre:</label>
-                    <input type="text" id="editmgenre" name="editmgenre"><br>
-                    <label for="editmdirector">Director:</label>
-                    <input type="text" id="editmdirector" name="editmdirector"><br>
-                    <label for="editmstaring">Starring:</label>
-                    <input type="text" id="editmstaring" name="editmstaring"><br>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                <input class="btn btn-light" id="editMoviesSubmitBtn" type="submit" value="Submit">
+    <!--edit movie modal-->
+    <div class="modal fade" id="editMovieModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="editModalHeader">Edit Movie</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="editModalContent">
+                        <label for="editmtitle">Movie Title:</label>
+                        <input type="text" id="editmtitle" name="editmtitle" required><br>
+                        <label for="editmrating">Rating:</label>
+                        <input type="text" id="editmrating" name="editmrating" required><br>
+                        <label for="editmgenre">Genre:</label>
+                        <input type="text" id="editmgenre" name="editmgenre"><br>
+                        <label for="editmdirector">Director:</label>
+                        <input type="text" id="editmdirector" name="editmdirector"><br>
+                        <label for="editmstaring">Starring:</label>
+                        <input type="text" id="editmstaring" name="editmstaring"><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <input class="btn btn-light" id="editMoviesSubmitBtn" type="submit" value="Submit">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--movie lists-->
+    <!--movie lists-->
 <!--    <div class="d-flex flex-wrap" ></div>-->
-<div class="row row-cols-1 row-cols-md-5 g-3" id="movieContent">
+    <div class="row row-cols-1 row-cols-md-5 g-3" id="movieContent">
 
-</div>
+    </div>
 
 <!--Bootstrap JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
