@@ -29,8 +29,8 @@ header {
     flex-direction: row;
 }
 h1 {
-    justify-content: center;
-    margin: 0 auto;
+    /*justify-content: center;*/
+    /*margin: 0 auto;*/
 }
 
 .search, .dropdown {
@@ -273,11 +273,7 @@ footer  {
 
 }
 @media only screen and (min-width: 0px) and (max-width: 770px) {
-<<<<<<< HEAD
-/*, .footer20, .footer60End*/
-=======
     /*, .footer20, .footer60End*/
->>>>>>> 3e2c40f02a204565ef677037e1be5b21e29b8b32
     footer {
         flex-direction: column;
         justify-content: center;
