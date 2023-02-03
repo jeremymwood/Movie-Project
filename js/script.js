@@ -68,7 +68,8 @@ $(document).on("click", '.closeButton', function(event){
     event.preventDefault();
     // console.log("delete button working");
     let thisId = this.closest(".movieItem").id;
-    console.log(thisId);
+    let thisIdNum = thisId.replace("movieItem","");
+    console.log(thisIdNum);
 
     // $.get(url)
 
