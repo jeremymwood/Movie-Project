@@ -32,7 +32,7 @@ function getMovies () {
                         <div class="cardGenre">Genre: ${value.genre}</div>
                         <div class="cardDirector">Director: ${value.director}</div>
                         <div class="cardStaring">Staring:${value.staring}</div>
-                        <div class="cardTagline fst-italic">"${value.tagline}"</div>
+                        <div class="cardTagline">Tagline:"<i>${value.tagline}</i>"</div>
                     </div>
                     <div class="controls d-flex flex-column">
                         <button type="button" class="btn closeButton" >
