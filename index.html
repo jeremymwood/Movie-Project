@@ -23,37 +23,39 @@
 <!--loading message-->
 <div class="" id="loading">Loading...</div>
 
-    <header class="d-flex">
-        <h1 class="d-flex justify-content-center">UnRated</h1>
-        <nav class="navbar">
+    <header class="d-flex justify-content-center">
+        <h1 class="">UnRated</h1>
+    </header>
+    <!--search by and sort by-->
+    <div class="d-flex">
+        <!--search by btn-->
+        <div class="flex-grow-1">
+            <form>
+                <input class="searchForm" type="search" placeholder="Search" aria-label="Search">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <!--sort by btn-->
+        <div class="">
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="sortByBtn" data-bs-toggle="dropdown"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">Title</a></li>
+                    <li><a class="dropdown-item" href="#">Rating</a></li>
+                    <li><a class="dropdown-item" href="#">Genre</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--navbar-->
+        <nav class="navbar ps-5">
             <button class="navbar-toggler bg-light float-end" id="addMovieBtn" type="button" data-bs-toggle="modal" data-bs-target="#addMovieModal">
                 <i class="fa-solid fa-plus"></i>
             </button>
         </nav>
-    </header>
-<!--navbar-->
+    </div>
 
-<!--search by and sort by-->
-<div class="row d-flex">
-    <!--search by btn-->
-    <div class="col-6">
-        <form>
-            <input class="searchForm" type="search" placeholder="Search" aria-label="Search">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-    </div>
-    <!--sort by btn-->
-    <div class="col-6 ">
-        <div class="dropdown">
-            <button class="btn btn-light dropdown-toggle" type="button" id="sortByBtn" data-bs-toggle="dropdown"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Title</a></li>
-                <li><a class="dropdown-item" href="#">Rating</a></li>
-                <li><a class="dropdown-item" href="#">Genre</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+
+
 
 <!--adding movies form-->
 <div class="modal fade addMoviesForm pb-4" id="addMovieModal" aria-hidden="true">
