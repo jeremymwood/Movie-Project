@@ -66,19 +66,16 @@ label, input {
 
 }
 .card:hover {
-    /*scale: 1.1;*/
     z-index: 1;
-    box-shadow: -0.5em -0.5em 0.5em var(--yellow);
+    box-shadow: -0.25em -0.25em 0.25em var(--yellow);
     left: .5em;
     top: .5em;
-
 }
 button:focus {
     cursor: pointer;
     outline-color: transparent;
     outline-style: none;
 }
-
 #loading {
     position:absolute;
     width:600px;
@@ -256,6 +253,7 @@ button:focus {
 
 footer  {
     color: var(--iconGray);
+    display: flex;
 }
 .footer60 {
     width: 60%;
@@ -274,11 +272,23 @@ footer  {
     padding-left: 1em;
 
 }
-/*@media only screen and (min-width: 320px) and (max-width: 770px) {*/
-/*    .footer60, .footer20, .footer60End {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
+@media only screen and (min-width: 0px) and (max-width: 770px) {
+/*, .footer20, .footer60End*/
+    footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer60 {
+        width: 100%;
+    }
+    .footer20 {
+        width: 100%;
+        /*margin: auto;*/
+    }
+    .footer20End {
+        width: 100%;
+    }
+}
 .site-footer {
     /*border-top: white 2px solid;*/
     /*position: absolute;*/
@@ -307,7 +317,7 @@ footer  {
 }
 .site-footer a
 {
-    color:var(--iconGray);
+    color: white;
 }
 .site-footer a:hover
 {

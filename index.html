@@ -30,8 +30,8 @@
     <header class="">
         <!--search by btn-->
         <form class="search">
-            <input id="searchbar" class="searchForm" type="search" placeholder="Search" aria-label="Search">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input id="searchBar" class="searchForm" type="search" placeholder="Search" aria-label="Search">
+            <button id="searchBarBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 
         <h1 class="title">UnRated</h1>
@@ -41,9 +41,9 @@
         <div class="dropdown">
             <button class="btn btn-light dropdown-toggle" type="button" id="sortByBtn" data-bs-toggle="dropdown"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
             <ul id="movieSelection" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Title</a></li>
-                <li><a class="dropdown-item" href="#">Rating</a></li>
-                <li><a class="dropdown-item" href="#">Genre</a></li>
+                <li id="titleFilter"><a class="dropdown-item" href="#">Title</a></li>
+                <li id="ratingFilter"><a class="dropdown-item" href="#">Rating</a></li>
+                <li id="genreFilter"><a class="dropdown-item" href="#">Genre</a></li>
             </ul>
         </div>
 
@@ -113,7 +113,7 @@
     <div class="row row-cols-1 row-cols-md-5 g-3" id="movieContent">
 
     </div>
-    <footer class="site-footer d-flex flex-row pt-3 mt-3">
+    <footer class="site-footer pt-3 mt-3">
 
             <div class="footer60">
                 <h6 class="mt-2 mb-0">About</h6>
