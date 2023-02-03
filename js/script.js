@@ -53,8 +53,7 @@ function getMovies () {
                             <i class="fa-solid fa-pen"></i>
                         </button>
                     </div>
-                </div>
-            </div>
+
             `;
         })
         $("#movieContent").html(movies);
@@ -87,6 +86,14 @@ $("#addMoviesSubmitBtn").click(function(event){
             // let movieRating = document.getElementById('mrating').value;
             // addMovie(movieTitle,movieRating);
         });
+
+});
+
+//submit button functionality for editing movies
+$("#editMoviesSubmitBtn").click(function(event){
+    event.preventDefault();
+    console.log("working");
+
 
 });
 
