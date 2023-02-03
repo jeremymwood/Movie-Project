@@ -22,7 +22,7 @@ body {
     /*background-color: var();*/
     background-image: linear-gradient(to bottom right, var(--purlpleDark), var(--purlpleLight));
     background-repeat: no-repeat;
-
+    height: 100vh;
 }
 header {
     display: flex;
@@ -41,46 +41,6 @@ label, input {
     color: var(--purlpleDark);
 }
 
-/*.imageContainer {*/
-/*    top: 0;*/
-/*    bottom: 0;*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    position: absolute;*/
-/*    overflow: hidden;*/
-/*}*/
-/*.demo-bg {*/
-/*    !*min-height: 100%;*!*/
-/*    !*background-size: auto;*!*/
-/*    position: absolute;*/
-/*    padding: 7px;*/
-/*    opacity: 0.4;*/
-/*    margin: 0;*/
-/*    !*left: 0;*!*/
-/*    !*top: 0;*!*/
-/*    z-index: -1;*/
-
-/*    !*z-index: -10;*!*/
-/*    !*opacity: 50%;*!*/
-/*    !*position: absolute;*!*/
-/*    !*!*top: 0;*!*!*/
-/*    !*!*bottom: 0;*!*!*/
-/*    !*!*left: 0;*!*!*/
-/*    !*!*right: 0;*!*!*/
-/*    !*min-width: 100%;*!*/
-/*    !*!*min-height: 100%;*!*!*/
-/*    !*!*width: auto;*!*!*/
-/*    !*height: auto;*!*/
-/*    !*overflow: hidden;*!*/
-/*    !*margin: auto;*!*/
-/*}*/
-
-
-/*#loading {*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*}*/
 .hide {
     display: none;
 }
