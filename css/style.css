@@ -21,6 +21,15 @@ h1 {
     float: left;
     align-self: center;
 }
+
+.imageContainer {
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*position: absolute;*/
+    /*overflow: hidden;*/
+}
 .demo-bg {
     width: 100vw;
     position: absolute;
@@ -30,6 +39,24 @@ h1 {
     left: 0;
     top: 0;
     z-index: -1;
+
+    /*z-index: -10;*/
+    /*opacity: 50%;*/
+    /*position: absolute;*/
+    /*!*top: 0;*!*/
+    /*!*bottom: 0;*!*/
+    /*!*left: 0;*!*/
+    /*!*right: 0;*!*/
+    /*min-width: 100%;*/
+    /*!*min-height: 100%;*!*/
+    /*!*width: auto;*!*/
+    /*height: auto;*/
+    /*overflow: hidden;*/
+    /*margin: auto;*/
+}
+
+.kenburns {
+
 }
 
 #loading {
@@ -49,10 +76,10 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
 }
-.controls .fa-solid {
+.fa-solid {
     color: var(--iconGray);
 }
-.controls .fa-solid:hover {
+.fa-solid:hover {
     color: var(--iconActive);
     scale: 1.3;
 }
