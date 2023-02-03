@@ -7,6 +7,8 @@
 //     comments: "first review"
 // };
 const url = 'https://round-puffy-blizzard.glitch.me/movies';
+let allMovies;
+
 // const options = {
 //     method: 'POST',
 //     headers: {
@@ -33,7 +35,9 @@ startDelay();
 function getMovies () {
     $.get(url).done(function (data) {
         //do something with the data
+        allMovies = data;
         let movies= "";
+
         $.each(data, function(data,value){
             movies += `
            <div class="col">
@@ -50,7 +54,7 @@ function getMovies () {
                         <button type="button" class="btn closeButton" >
                             <i class="fa-solid fa-xmark"></i>
                         </button>
-                        <button type="button" class="btn mb-2" data-bs-toggle="modal" data-bs-target="#editMovieModal">
+                        <button type="button" class="btn mb-2 editMovieBtn" data-bs-toggle="modal" data-bs-target="#editMovieModal" data-id="${value.id}">
                             <i class="fa-solid fa-pen"></i>
                         </button>
                     </div>
@@ -86,7 +90,8 @@ $(document).on("click", '.closeButton', function(event){
 //
 // });
 
-//submit button functionality for new movies
+
+//submit button functionality for adding movies
 $("#addMoviesSubmitBtn").click(function(event){
     event.preventDefault();
     console.log("working");
@@ -102,18 +107,53 @@ $("#addMoviesSubmitBtn").click(function(event){
         body: JSON.stringify(movie),
     };
     fetch(url,options)
-        .then(function(response){
-            // let movieTitle = document.getElementById('mtitle').value;
-            // let movieRating = document.getElementById('mrating').value;
-            // addMovie(movieTitle,movieRating);
-        });
-
+        .then(function(){
+            getMovies();
+        }).then($("#addMovieModal").modal("toggle"));
 });
 
-//submit button functionality for editing movies
-$("#editMoviesSubmitBtn").click(function(event){
+function refreshPage(){
+    window.location.reload();
+}
+
+//edit button functionality for editing movies
+let working;
+$("#movieContent").on("click", "button.editMovieBtn", function (event) {
     event.preventDefault();
-    console.log("working");
+    working = $(this).attr("data-id");
+    $("#editmtitle").val(allMovies[working - 1].title);
+    $("#editmrating").val(allMovies[working - 1].rating);
+    $("#editmgenre").val(allMovies[working - 1].genre);
+    $("#editmdirector").val(allMovies[working - 1].director);
+    $("#editmstaring").val(allMovies[working - 1].staring);
+    $("#editmtagline").val(allMovies[working - 1].tagline);
+    console.log(working);
+});
+
+//submit button for editing movies
+$("#editMoviesSubmitBtn").click(function(){
+    $("#editmtitle").val();
+    $("#editmrating").val();
+    $("#editmgenre").val();
+    $("#editmdirector").val();
+    $("#editmstaring").val();
+    $("#editmtagline").val();
+
+    fetch(`https://round-puffy-blizzard.glitch.me/movies/${working}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+            title: document.querySelector('#editmtitle').value,
+            rating: document.querySelector('#editmrating').value,
+            genre: document.querySelector('#editmgenre').value,
+            director: document.querySelector('#editmgenre').value,
+            staring: document.querySelector('#editmgenre').value,
+            tagline: document.querySelector('#editmgenre').value
+        }),
+        headers: {"Content-Type": "application/json"}
+    }).then(function(){
+        getMovies();
+    }).then($("#editMovieModal").modal("toggle"))
+        .catch(error => console.log(error));
 
 });
 
