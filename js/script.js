@@ -35,22 +35,24 @@ function getMovies () {
         let movies= "";
         $.each(data, function(data,value){
             movies += `
-            <div class="movieItem card bg-light bg-opacity-75 border border-2 hover-border-red border-dark d-flex flex-row p-3" id="moveieItem${value.id}">
-                <div class="flex-grow-1 pe-3">
-                    <div class="fs-5 fw-bolder">${value.title}</div>
-                    <div>Rating: ${value.rating}/10</div>
-                    <div>Genre: ${value.genre}</div>
-                    <div>Director: ${value.director}</div>
-                    <div>Staring:${value.staring}</div>
-                    <div class="fst-italic">"${value.tagline}"</div>
-                </div>
-                <div class="controls d-flex flex-column">
-                    <button type="button" class="btn" >
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                    <button type="button" class="btn mb-2" data-bs-toggle="modal" data-bs-target="#editMovieModal">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
+           <div class="col">
+                <div class="movieItem card bg-light border border-2 hover-border-red border-dark d-flex flex-row p-3 w-100 h-100" id="moveieItem${value.id}">
+                    <div class="flex-grow-1 pe-3">
+                        <div class="fs-5 fw-bolder">${value.title}</div>
+                        <div>Rating: ${value.rating}/10</div>
+                        <div>Genre: ${value.genre}</div>
+                        <div>Director: ${value.director}</div>
+                        <div>Staring:${value.staring}</div>
+                        <div class="fst-italic">"${value.tagline}"</div>
+                    </div>
+                    <div class="controls d-flex flex-column">
+                        <button type="button" class="btn" >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <button type="button" class="btn mb-2" data-bs-toggle="modal" data-bs-target="#editMovieModal">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             `;

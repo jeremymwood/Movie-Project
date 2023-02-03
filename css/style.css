@@ -5,6 +5,10 @@
     --cardBackground: #6decbf;
     /*box-sizing: border-box;*/
 }
+* {
+    font-family: 'Spline Sans Mono', monospace;
+    box-sizing: border-box;
+}
 header {
     display: flex;
     flex-direction: row;
@@ -12,7 +16,6 @@ header {
 h1 {
     justify-content: center;
     margin: 0 auto;
-
 }
 .search, .dropdown {
     float: left;
