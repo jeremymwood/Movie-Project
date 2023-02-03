@@ -37,7 +37,7 @@ function getMovies () {
         $.each(data, function(data,value){
             movies += `
            <div class="col">
-                <div class="movieItem card bg-transparent border border-2 d-flex flex-row p-3 w-100 h-100" id="moveieItem${value.id}">
+                <div class="movieItem card bg-transparent border border-2 d-flex flex-row p-3 w-100 h-100" id="${value.id}">
                     <div class="flex-grow-1 pe-3">
                         <div class="cardTitle fs-5 fw-bolder">${value.title}</div>
                         <div>Rating: ${value.rating}/10</div>
@@ -66,13 +66,19 @@ function getMovies () {
 //delete button functionality for deleting movie cards
 $(document).on("click", '.closeButton', function(event){
     event.preventDefault();
-    // console.log("delete button working");
+    let thisCard = this.closest(".movieItem");
     let thisId = this.closest(".movieItem").id;
-    let thisIdNum = thisId.replace("movieItem","");
-    console.log(thisIdNum);
+    // let json = {id: thisId};
+    console.log(thisId);
+    thisCard.remove();
 
-    // $.get(url)
+    const options = {
+        method: 'DELETE',
+    };
 
+    fetch(url + "/" + thisId, options)
+        .then(/* post was created successfully */)
+        .catch(/* handle errors */);
 });
 
 //add movie button functionality
