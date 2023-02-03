@@ -1,13 +1,23 @@
 :root {
     --iconGray: #a29b9b;
-    --iconActive: #000000;
     --cardBorder: #cef5e6;
     --cardBackground: #6decbf;
     /*box-sizing: border-box;*/
+    /*lala land color scheme*/
+    --purlpleDark: #1F0F59;
+    --purlpleMed: #2D1F8C;
+    --purlpleLight: #481E91;
+    --yellow: #F2AC57;
+
+
 }
+
 * {
     font-family: 'Spline Sans Mono', monospace;
     box-sizing: border-box;
+}
+body {
+    /*background-color: var(--purlpleDark);*/
 }
 header {
     display: flex;
@@ -16,7 +26,10 @@ header {
 h1 {
     justify-content: center;
     margin: 0 auto;
+    color: var(--purlpleMed);
+
 }
+
 .search, .dropdown {
     float: left;
     align-self: center;
@@ -55,9 +68,6 @@ h1 {
     /*margin: auto;*/
 }
 
-.kenburns {
-
-}
 
 /*#loading {*/
 /*    position: fixed;*/
@@ -80,16 +90,18 @@ h1 {
     color: var(--iconGray);
 }
 .fa-solid:hover {
-    color: var(--iconActive);
+    color: var(--purlpleMed);
     scale: 1.3;
 }
 .card {
     width: 20%;
+    color: var(--purlpleMed);
+
 }
 .card:hover {
     /*scale: 1.1;*/
     z-index: 1;
-    box-shadow: -0.5em -0.5em 0.5em black;
+    box-shadow: -0.5em -0.5em 0.5em var(--yellow);
     left: .5em;
     top: .5em;
 

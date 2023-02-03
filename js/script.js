@@ -24,7 +24,7 @@ function startDelay(){
     setTimeout(function() {
         $('#loading').addClass('hide');
         getMovies();
-    }, 5000);
+    }, 2000);
 }
 startDelay();
 
@@ -36,9 +36,9 @@ function getMovies () {
         $.each(data, function(data,value){
             movies += `
            <div class="col">
-                <div class="movieItem card bg-light border border-2 hover-shadow border-dark d-flex flex-row p-3 w-100 h-100" id="moveieItem${value.id}">
+                <div class="movieItem card bg-light border border-2 d-flex flex-row p-3 w-100 h-100" id="moveieItem${value.id}">
                     <div class="flex-grow-1 pe-3">
-                        <div class="fs-5 fw-bolder">${value.title}</div>
+                        <div class="cardTitle fs-5 fw-bolder">${value.title}</div>
                         <div>Rating: ${value.rating}/10</div>
                         <div>Genre: ${value.genre}</div>
                         <div>Director: ${value.director}</div>
@@ -112,3 +112,9 @@ $("#editMoviesSubmitBtn").click(function(event){
 //edit modal functionality
 let editModal = document.querySelector("#editMovieModal");
 let editModalBtn = document.querySelector("#editMoviesSubmitBtn");
+
+// $('.card').hover(.css('color', random_color));
+var hexArray = ['#hexVal','#hexVal','#hexval', '#hexval']
+var randomColor = hexArray[Math.floor(Math.random() * hexArray.length)];
+
+$("#divId").css("color",randomColor); //A class selector would work too
