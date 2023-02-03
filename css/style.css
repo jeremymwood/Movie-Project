@@ -3,7 +3,9 @@
     --iconActive: #000000;
     --cardBorder: #cef5e6;
     --cardBackground: #6decbf;
+    /*box-sizing: border-box;*/
 }
+
 .demo-bg {
     width: 100vw;
     position: absolute;
@@ -36,10 +38,17 @@
 }
 .controls .fa-solid:hover {
     color: var(--iconActive);
+    scale: 1.3;
 }
 .card {
-    width: 250px;
+    width: 20%;
 }
 .card:hover {
     scale: 1.1;
+    z-index: 1;
+}
+button:focus {
+    cursor: pointer;
+    outline-color: transparent;
+    outline-style: none;
 }
