@@ -5,7 +5,19 @@
     --cardBackground: #6decbf;
     /*box-sizing: border-box;*/
 }
+header {
+    display: flex;
+    flex-direction: row;
+}
+h1 {
+    justify-content: center;
+    margin: 0 auto;
 
+}
+.search, .dropdown {
+    float: left;
+    align-self: center;
+}
 .demo-bg {
     width: 100vw;
     position: absolute;
