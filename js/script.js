@@ -97,11 +97,41 @@ $("#editMoviesSubmitBtn").click(function(event){
 
 });
 
-//submit button functionality for editing movies
-$("#editMoviesSubmitBtn").click(function(event){
-    event.preventDefault();
+//delete button functionality for deleting movie cards
+$("#deleteBtn").click(function(){
+    // event.preventDefault();
     console.log("working");
+    // $(this).parents("#movieContent").hide();
+});
 
+//search bar functionality
+$("#searchBtn").click(function(event){
+    console.log("working");
+    let input = document.getElementById("searchInput").value;
+    input.toLowerCase();
+    let movieTitles = document.getElementsByClassName("movieTitles");
+    for (let i = 0; i < movieTitles.length; i++) {
+        if(!movieTitles[i].innerHTML.toLowerCase().includes(input)){
+            movieTitles[i].style.display = "none";
+        }else {
+            movieTitles[i].style.display = "block";
+        }
+    }
+});
+
+//filter functionality
+$("#titleFilter").click(function(){
+    console.log("working");
+    let sortedCards = $(".movieCards").sort(function(a,b){
+        return $(a).find(".movieTitles").text().localeCompare()($(b).find(".movieTitles").text());
+    })
+    $("#movieContent").remove(".movieCards").append(sortedCards);
+});
+$("#ratingFilter").click(function(){
+    console.log("working");
+});
+$("#genreFilter").click(function(){
+    console.log("working");
 });
 
 // function to add a movie; possibly useful later
