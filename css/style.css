@@ -15,14 +15,13 @@
 * {
     font-family: 'Spline Sans Mono', monospace;
     box-sizing: border-box;
-    color: white;
 
 }
 body {
-    /*background-color: var();*/
     background-image: linear-gradient(to bottom right, var(--purlpleDark), var(--purlpleLight));
     background-repeat: no-repeat;
     height: 100%;
+    color: white;
 }
 header {
     display: flex;
@@ -32,7 +31,9 @@ h1 {
     /*justify-content: center;*/
     /*margin: 0 auto;*/
 }
-
+.modal {
+    color: var(--purlpleDark);
+}
 .search, .dropdown {
     float: left;
     align-self: center;
@@ -68,8 +69,8 @@ label, input {
 .card:hover {
     z-index: 1;
     box-shadow: -0.25em -0.25em 0.25em var(--yellow);
-    left: .5em;
-    top: .5em;
+    left: .25em;
+    top: .25em;
 }
 button:focus {
     cursor: pointer;
