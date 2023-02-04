@@ -31,12 +31,40 @@ h1 {
     /*justify-content: center;*/
     /*margin: 0 auto;*/
 }
+.modal-content {
+    /*background-color: transparent;*/
+
+}
 .modal {
     color: var(--purlpleDark);
 }
-.search, .dropdown {
+.modal-dialog {
+    top: 30%;
+}
+modal-content {
+    background-color: transparent;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    font-weight: lighter;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+.search {
+    color: white;
+}
+.search, .dropdown, #addMovieBtn {
     float: left;
     align-self: center;
+
 }
 label, input {
     color: var(--purlpleDark);
