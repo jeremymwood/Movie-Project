@@ -1,9 +1,5 @@
 :root {
     --iconGray: #a29b9b;
-    --cardBorder: #cef5e6;
-    --cardBackground: #6decbf;
-    /*box-sizing: border-box;*/
-    /*lala land color scheme*/
     --purlpleDark: #1F0F59;
     --purlpleMed: #2D1F8C;
     --purlpleLight: #522e8f;
@@ -35,7 +31,7 @@ h1 {
     /*color: red;*/
     color: var(--purlpleLight);
 }
-.editModalContent label {
+.editModalContent label, .modal-body label {
 padding-top: .5em
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -70,9 +66,12 @@ label, input {
     width: 100%;
     overflow: auto;
 }
+.modal-footer button, .modal-footer input  {
+    border: .125em var(--purlpleLight) solid;
+}
 .modal-footer button:hover, .modal-footer input:hover  {
+    border: .125em var(--yellow) solid;
     color: var(--yellow);
-
 }
 .hide {
     display: none;
@@ -323,11 +322,7 @@ footer  {
     }
 }
 .site-footer {
-    /*border-top: white 2px solid;*/
-    /*position: absolute;*/
     bottom: 0;
-    /*background-color:#26272b;*/
-    /*padding:45px 0 20px;*/
     font-size:15px;
     line-height:24px;
 }
@@ -391,7 +386,6 @@ footer  {
     margin-left:6px;
     margin-right:0;
     border-radius:100%;
-    /*background-color:#33353d*/
 }
 .copyright-text
 {
