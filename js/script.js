@@ -1,9 +1,11 @@
 "use strict";
 
+//global variables
 const url = 'https://round-puffy-blizzard.glitch.me/movies';
 let allMovies;
 let movies;
 
+//reusable function for generating movie cards
 function makeMovieCards(value){
    movies += `
            <div class="col">
@@ -20,7 +22,7 @@ function makeMovieCards(value){
                         <button type="button" class="btn closeButton" >
                             <i class="fa-solid fa-xmark"></i>
                         </button>
-                        <button type="button" class="btn mb-2 editMovieBtn" data-bs-toggle="modal" data-bs-target="#editMovieModal" data-id="${value.id}">
+                        <button type="button" class="btn mb-2 editMovieBtn" data-bs-toggle="modal" data-bs-target="#editMovieModal" data-id="${value.id}" >
                             <i class="fa-solid fa-pen"></i>
                         </button>
                     </div>
@@ -50,7 +52,6 @@ function getMovies () {
         $.each(data, function(data, value){
             makeMovieCards(value);
         })
-        console.log(data);
         $("#movieContent").html(movies);
     });
 }
@@ -72,7 +73,6 @@ $(document).on("click", '.closeButton', function(event){
 //submit button functionality for adding movies
 $("#addMoviesSubmitBtn").click(function(event) {
     event.preventDefault();
-    console.log("working");
     const movie = {
         title: $("#mtitle").val(),
         rating: $("#mrating").val()
@@ -101,7 +101,6 @@ $("#movieContent").on("click", "button.editMovieBtn", function (event) {
     $("#editmdirector").val(allMovies[working - 1].director);
     $("#editmstaring").val(allMovies[working - 1].staring);
     $("#editmtagline").val(allMovies[working - 1].tagline);
-    console.log(working);
 });
 
 //submit button for editing movies
@@ -152,24 +151,8 @@ $("#searchBarBtn").on("click",function() {
 });
 
 
-//filter functionality
+//title filter functionality
 $("#titleFilter").click(function(){
-    console.log("working");
-    // let titleFilter = $(this);
-    // let characters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    // let numbers = [1,2,3,4,5,6,7,8,9,10,11,12];
-    // let filteredMovies = [];
-    // for (let i = 0; i < allMovies.length; i++) {
-    //     let title = allMovies[i].title.toLowerCase();
-    //     if (allMovies[i].charAt(title) === characters[i]){
-    //         filteredMovies.push(allMovies[i]);
-    //     }
-    //     console.log(title);
-    // }
-
-    // let filteredByTitle = allMovies.sort(function(x,y){
-    //     x.title.localeCompare(y.title);
-    // })
     let filteredMoviesByTitle = allMovies.sort(function (a, b) {
         if (a.title < b.title) {
             return -1;
@@ -179,9 +162,6 @@ $("#titleFilter").click(function(){
         }
         return 0;
     });
-
-    console.log(allMovies);
-
     movies = "";
     $(filteredMoviesByTitle).each(function(data,value) {
         makeMovieCards(value);
@@ -189,13 +169,8 @@ $("#titleFilter").click(function(){
     $("#movieContent").html(movies);
 });
 
-
-
-
-
-
+//rating filter functionality
 $("#ratingFilter").click(function(){
-    console.log("working");
     let filteredMoviesByRating = allMovies.sort(function (a, b) {
         if (a.rating < b.rating) {
             return -1;
@@ -205,9 +180,6 @@ $("#ratingFilter").click(function(){
         }
         return 0;
     });
-
-    console.log(allMovies);
-
     movies = "";
     $(filteredMoviesByRating).each(function(data,value) {
         makeMovieCards(value);
@@ -215,8 +187,8 @@ $("#ratingFilter").click(function(){
     $("#movieContent").html(movies);
 });
 
+//genre filter functionality
 $("#genreFilter").click(function(){
-    console.log("working");
     let filteredMoviesByGenre = allMovies.sort(function (a, b) {
         if (a.genre < b.genre) {
             return -1;
@@ -226,9 +198,6 @@ $("#genreFilter").click(function(){
         }
         return 0;
     });
-
-    console.log(allMovies);
-
     movies = "";
     $(filteredMoviesByGenre).each(function(data,value) {
         makeMovieCards(value);
@@ -237,25 +206,9 @@ $("#genreFilter").click(function(){
 
 
 });
-//
-// $(document).on("click", '.closeButton', function(event){
-//     event.preventDefault();
-//     let thisCard = this.closest(".movieItem");
-//     let thisId = this.closest(".movieItem").id;
-//     thisCard.remove();
-//     const options = {
-//         method: 'DELETE',
-//     };
-//     fetch(url + "/" + thisId, options)
-//         .then(/* post was created successfully */)
-//         .catch(/* handle errors */);
-// });
 
+//favorite click functionality
 $(document).on("click", ".fa-star", function (event) {
     event.preventDefault();
-    console.log("working")
-
     $(this).css('color', "var(--yellow)");
-    // $(".fa-solid fa-star").css("display", "inline")
-    // $(this).addClass('.fa-solid');
 });

@@ -27,35 +27,33 @@
         <div>L</div>
     </div>
 
+    <!--header -->
     <header class="d-flex mb-3">
         <h1 class="flex-grow-1 text-white">UnRated</h1>
 
         <!--search by btn-->
         <form class="search text-white">
             <input id="searchBar" class="searchForm bg-transparent border border-2 border-white rounded-2 text-white px-2 py-1" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn" id="searchBarBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="btn" id="searchBarBtn" ><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 
-        <!--sort by btn-->
-        <!--search by and sort by-->
+        <!--sort by dropdown-->
         <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="sortByBtn" data-bs-toggle="dropdown"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
+            <button class="btn dropdown-toggle" type="button" id="sortByBtn" data-bs-toggle="dropdown" ><i class="fa-solid fa-arrow-up-wide-short"></i></button>
             <ul id="movieSelection" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li id="titleFilter"><a class="dropdown-item" href="#">Title</a></li>
                 <li id="ratingFilter"><a class="dropdown-item" href="#">Rating</a></li>
-
                 <li id="genreFilter" ><a class="dropdown-item" href="#">Genre</a></li>
             </ul>
         </div>
 
-        <!--Add Movie-->
-        <button class="btn" id="addMovieBtn" type="button" data-bs-toggle="modal" data-bs-target="#addMovieModal">
+        <!--add movie button-->
+        <button class="btn" id="addMovieBtn" type="button" data-bs-toggle="modal" data-bs-target="#addMovieModal" >
             <i class="fa-solid fa-plus"></i>
         </button>
     </header>
 
-    <!--adding movies form-->
-    <!--adding movies form-->
+    <!--add movies modal-->
     <div class="modal fade addMoviesForm pb-4" id="addMovieModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -71,12 +69,13 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light bg-transparent" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light bg-transparent" data-bs-dismiss="modal" >Close</button>
                     <input id="addMoviesSubmitBtn" class="btn btn-light bg-transparent" type="submit" value="Submit">
                 </div>
             </div>
         </div>
     </div>
+
     <!--edit movie modal-->
     <div class="modal fade" id="editMovieModal" aria-hidden="true">
         <div class="modal-dialog">
@@ -101,7 +100,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" >Close</button>
                     <input class="btn btn-light" id="editMoviesSubmitBtn" type="submit" value="Submit">
                 </div>
             </div>
@@ -110,9 +109,11 @@
 
     <!--movie lists-->
     <div class="row row-cols-1 row-cols-lg-5 row-cols-sm-2 g-3" id="movieContent"></div>
+
+    <!--empty div to keep footer on bottom-->
     <div class="filler"></div>
-<!--    <footer class="site-footer pt-3 mt-3 hide">-->
-<!--    <footer class="site-footer pt-3 mt-3 hide">-->
+
+    <!--footer-->
     <footer class="site-footer row row-cols-1 row-cols-lg-5 row-cols-sm-2 g-3 d-none">
         <div class="d-flex flex-column p-3">
             <h6 class="mt-2 mb-0">About</h6>
