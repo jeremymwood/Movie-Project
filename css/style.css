@@ -353,13 +353,12 @@ footer  {
     margin-top:5px;
     letter-spacing:2px
 }
-.site-footer a
-{
-    color: white;
+.site-footer a {
+    color:var(--iconGray)
 }
 .site-footer a:hover
 {
-    color:white;
+    color: var(--yellow);
     text-decoration:none;
 }
 .footer-links
@@ -377,7 +376,7 @@ footer  {
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-    color:white;
+    color: var(--yellow);
     text-decoration:none;
 }
 .footer-links.inline li

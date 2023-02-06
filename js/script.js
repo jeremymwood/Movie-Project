@@ -8,11 +8,11 @@ function startDelay(){
     setTimeout(function() {
         $('#loading').addClass('hide');
         getMovies();
-    }, 3000);
+    }, 2000);
     setTimeout(function() {
-        $('footer').removeClass('hide');
-    }, 3200);
-
+        getMovies();
+        $('footer').removeClass('d-none')
+    }, 2500);
 }
 startDelay();
 
