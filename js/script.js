@@ -9,7 +9,7 @@ function makeMovieCards(value){
            <div class="col">
                 <div class="movieItem card bg-transparent text-white border border-2 d-flex flex-row p-3 w-100 h-100" id="${value.id}">
                     <div class="flex-grow-1 pe-3">
-                        <div class="cardTitle fs-5 fw-bolder">${value.title} <i class="fa-regular fa-star pb-2" id="favorite"></i></div>
+                        <div class="cardTitle fs-5 fw-bolder">${value.title} <i class="fa-solid fa-star"></i></div>
                         <div class="cardRating"><b>Rating:</b> ${value.rating}/10</div>
                         <div class="cardGenre"><b>Genre:</b> ${value.genre}</div>
                         <div class="cardDirector"><b>Director:</b> ${value.director}</div>
@@ -251,11 +251,11 @@ $("#genreFilter").click(function(){
 //         .catch(/* handle errors */);
 // });
 
-$(document).on("click", "#favorite", function (event) {
+$(document).on("click", ".fa-star", function (event) {
     event.preventDefault();
-    // $(this)
     console.log("working")
 
-    // $(this).toggleClass('fa-solid fa-star');
+    $(this).css('color', "var(--yellow)");
+    // $(".fa-solid fa-star").css("display", "inline")
     // $(this).addClass('.fa-solid');
 });
