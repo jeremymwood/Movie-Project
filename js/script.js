@@ -141,10 +141,10 @@ $("#editMoviesSubmitBtn").click(function(){
 
 // search bar functionality
 $("#searchBarBtn").on("click",function() {
-    let typedMovie = $("#searchBar").val();
+    let typedMovie = $("#searchBar").val().toLowerCase();
     let filteredMovies = [];
     for (let i = 0; i < allMovies.length; i++) {
-        if (typedMovie === allMovies[i].title) { //and dropdown menu is title
+        if (typedMovie === allMovies[i].title.toLowerCase()) { //and dropdown menu is title
             filteredMovies.push(allMovies[i]);
             // console.log(allMovies[i].title);
             // console.log(allMovies[i].id);
@@ -152,7 +152,7 @@ $("#searchBarBtn").on("click",function() {
             // return allMovies[i].title;
             continue;
         }
-        if (allMovies[i].title.includes(typedMovie)){
+        if (allMovies[i].title.toLowerCase().includes(typedMovie)){
             filteredMovies.push(allMovies[i]);
             continue;
         }
