@@ -102,7 +102,7 @@ label, input {
 .fa-solid {
     color: var(--iconGray);
 }
-.fa-solid:hover {
+.fa-solid:hover, .fa-star:hover {
     color: var(--yellow);
     scale: 1.3;
 }
