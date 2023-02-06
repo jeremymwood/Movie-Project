@@ -2,30 +2,10 @@
 
 const url = 'https://round-puffy-blizzard.glitch.me/movies';
 let allMovies;
+let movies;
 
-// loading message function to disappear and show movie lists after 5 seconds
-function startDelay(){
-    setTimeout(function() {
-        $('#loading').addClass('hide');
-        getMovies();
-    }, 2000);
-    setTimeout(function() {
-        getMovies();
-        $('footer').removeClass('d-none')
-    }, 2500);
-}
-startDelay();
-
-
-//ajax request to get a listing of all movies
-function getMovies () {
-    $.get(url).done(function (data) {
-        // allMovies = data;
-        //do something with the data
-        allMovies = data;
-        let movies= "";
-        $.each(data, function(data,value){
-            movies += `
+function makeMovieCards(value){
+   movies += `
            <div class="col">
                 <div class="movieItem card bg-transparent text-white border border-2 d-flex flex-row p-3 w-100 h-100" id="${value.id}">
                     <div class="flex-grow-1 pe-3">
@@ -47,7 +27,28 @@ function getMovies () {
                 </div>
             </div>
             `;
+}
 
+// loading message function to disappear and show movie lists after 5 seconds
+function startDelay(){
+    setTimeout(function() {
+        $('#loading').addClass('hide');
+        getMovies();
+    }, 2000);
+    setTimeout(function() {
+        getMovies();
+        $('footer').removeClass('d-none')
+    }, 2500);
+}
+startDelay();
+
+//ajax request to get a listing of all movies
+function getMovies () {
+    $.get(url).done(function (data) {
+        allMovies = data;
+        movies= "";
+        $.each(data, function(data, value){
+            makeMovieCards(value);
         })
         console.log(data);
         $("#movieContent").html(movies);
@@ -59,14 +60,10 @@ $(document).on("click", '.closeButton', function(event){
     event.preventDefault();
     let thisCard = this.closest(".movieItem");
     let thisId = this.closest(".movieItem").id;
-    // let json = {id: thisId};
-    console.log(thisId);
     thisCard.remove();
-
     const options = {
         method: 'DELETE',
     };
-
     fetch(url + "/" + thisId, options)
         .then(/* post was created successfully */)
         .catch(/* handle errors */);
@@ -93,10 +90,6 @@ $("#addMoviesSubmitBtn").click(function(event) {
         }).then($("#addMovieModal").modal("toggle"));
 });
 
-function refreshPage(){
-    window.location.reload();
-}
-
 //edit button functionality for editing movies
 let working;
 $("#movieContent").on("click", "button.editMovieBtn", function (event) {
@@ -119,7 +112,6 @@ $("#editMoviesSubmitBtn").click(function(){
     $("#editmdirector").val();
     $("#editmstaring").val();
     $("#editmtagline").val();
-
     fetch(`https://round-puffy-blizzard.glitch.me/movies/${working}`, {
         method: "PATCH",
         body: JSON.stringify({
@@ -137,60 +129,24 @@ $("#editMoviesSubmitBtn").click(function(){
         .catch(error => console.log(error));
 });
 
-
-
 // search bar functionality
 $("#searchBarBtn").on("click",function() {
+    // e.preventDefault();
     let typedMovie = $("#searchBar").val().toLowerCase();
-    let filteredMovies = [];
+    let searchedMovies = [];
     for (let i = 0; i < allMovies.length; i++) {
         if (typedMovie === allMovies[i].title.toLowerCase()) { //and dropdown menu is title
-            filteredMovies.push(allMovies[i]);
-            // console.log(allMovies[i].title);
-            // console.log(allMovies[i].id);
-            // console.log(filteredMovies);
-            // return allMovies[i].title;
+            searchedMovies.push(allMovies[i]);
             continue;
         }
         if (allMovies[i].title.toLowerCase().includes(typedMovie)){
-            filteredMovies.push(allMovies[i]);
+            searchedMovies.push(allMovies[i]);
             continue;
         }
-        // function filterCards(data) {
-        //     //do something with the data
-        //     allMovies = data;
     }
-    console.log(filteredMovies);
-    let movies = "";
-    $(filteredMovies).each(function(data,value) {
-        // let filteredValues = "";
-        // filteredValues += value;
-
-        movies += `
-           <div class="col">
-                <div class="movieItem card bg-transparent text-white border border-2 d-flex flex-row p-3 w-100 h-100" id="${value.id}">
-                    <div class="flex-grow-1 flex-shrink-1 pe-3">
-                        <div class="cardTitle fs-5 fw-bolder">${value.title}</div>
-                        <div class="cardRating">Rating: ${value.rating}/10</div>
-                        <div class="cardGenre">Genre: ${value.genre}</div>
-                        <div class="cardDirector">Director: ${value.director}</div>
-                        <div class="cardStaring">Staring: ${value.staring}</div>
-                        <div class="cardTagline fst-italic">"${value.tagline}"</div>
-                    </div>
-                    <div class="controls d-flex flex-column">
-                        <button type="button" class="btn closeButton" >
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                        <button type="button" class="btn mb-2 editMovieBtn" data-bs-toggle="modal" data-bs-target="#editMovieModal" data-id="${value.id}">
-                            <i class="fa-solid fa-pen"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            `;
-        console.log(movies);
-
-        console.log(value);
+    movies = "";
+    $(searchedMovies).each(function(data,value) {
+        makeMovieCards(value);
     });
     $("#movieContent").html(movies);
 });
@@ -199,12 +155,83 @@ $("#searchBarBtn").on("click",function() {
 //filter functionality
 $("#titleFilter").click(function(){
     console.log("working");
+    // let titleFilter = $(this);
+    // let characters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    // let numbers = [1,2,3,4,5,6,7,8,9,10,11,12];
+    // let filteredMovies = [];
+    // for (let i = 0; i < allMovies.length; i++) {
+    //     let title = allMovies[i].title.toLowerCase();
+    //     if (allMovies[i].charAt(title) === characters[i]){
+    //         filteredMovies.push(allMovies[i]);
+    //     }
+    //     console.log(title);
+    // }
+
+    // let filteredByTitle = allMovies.sort(function(x,y){
+    //     x.title.localeCompare(y.title);
+    // })
+    let filteredMoviesByTitle = allMovies.sort(function (a, b) {
+        if (a.title < b.title) {
+            return -1;
+        }
+        if (a.title > b.title) {
+            return 1;
+        }
+        return 0;
+    });
+
+    console.log(allMovies);
+
+    movies = "";
+    $(filteredMoviesByTitle).each(function(data,value) {
+        makeMovieCards(value);
+    });
+    $("#movieContent").html(movies);
 });
+
+
+
+
+
 
 $("#ratingFilter").click(function(){
     console.log("working");
+    let filteredMoviesByRating = allMovies.sort(function (a, b) {
+        if (a.rating < b.rating) {
+            return -1;
+        }
+        if (a.rating > b.rating) {
+            return 1;
+        }
+        return 0;
+    });
+
+    console.log(allMovies);
+
+    movies = "";
+    $(filteredMoviesByRating).each(function(data,value) {
+        makeMovieCards(value);
+    });
+    $("#movieContent").html(movies);
 });
 
 $("#genreFilter").click(function(){
     console.log("working");
+    let filteredMoviesByGenre = allMovies.sort(function (a, b) {
+        if (a.genre < b.genre) {
+            return -1;
+        }
+        if (a.genre > b.genre) {
+            return 1;
+        }
+        return 0;
+    });
+
+    console.log(allMovies);
+
+    movies = "";
+    $(filteredMoviesByGenre).each(function(data,value) {
+        makeMovieCards(value);
+    });
+    $("#movieContent").html(movies);
 });
