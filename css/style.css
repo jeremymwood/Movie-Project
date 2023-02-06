@@ -13,6 +13,7 @@ body {
     background-image: linear-gradient(to bottom right, var(--purlpleDark), var(--purlpleLight));
     background-repeat: no-repeat;
     height: 100%;
+    min-height: 100vh;
     color: white;
 }
 header {
@@ -30,6 +31,10 @@ h1 {
 .modal *, .modal-footer .btn {
     /*color: red;*/
     color: var(--purlpleLight);
+}
+#movieContent .col {
+    /*overflow: hidden;*/
+    /*min-height: 50%;*/
 }
 .editModalContent label, .modal-body label {
 padding-top: .5em
@@ -72,6 +77,9 @@ label, input {
 .modal-footer button:hover, .modal-footer input:hover  {
     border: .125em var(--yellow) solid;
     color: var(--yellow);
+}
+.modal-footer button:active, .modal-footer input:active  {
+    scale: 1.1;
 }
 .hide {
     display: none;
@@ -137,7 +145,7 @@ button:focus {
     -o-transform:rotate(180deg);
     -moz-transform:rotate(180deg);
     -webkit-transform:rotate(180deg);
-    color: black;
+    color: white;
 }
 
 #loading div:nth-child(2) {
@@ -286,9 +294,11 @@ button:focus {
 footer  {
     color: var(--iconGray);
     display: flex;
+    /*position: absolute;*/
+    /*bottom: 0;*/
 }
-.footer60 {
-    width: 60%;
+.footer20Start {
+    width: 20%;
     margin-right: 1em;
     padding-left: 1em;
 }
@@ -310,7 +320,7 @@ footer  {
         flex-direction: column;
         justify-content: center;
     }
-    .footer60 {
+    .footer20Start {
         width: 100%;
     }
     .footer20 {

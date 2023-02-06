@@ -8,8 +8,10 @@ function startDelay(){
     setTimeout(function() {
         $('#loading').addClass('hide');
         getMovies();
-        // console.log(allMovies);
-    }, 500);
+    }, 3000);
+    setTimeout(function() {
+        $('footer').removeClass('hide');
+    }, 3200);
 
 }
 startDelay();
@@ -28,11 +30,11 @@ function getMovies () {
                 <div class="movieItem card bg-transparent text-white border border-2 d-flex flex-row p-3 w-100 h-100" id="${value.id}">
                     <div class="flex-grow-1 pe-3">
                         <div class="cardTitle fs-5 fw-bolder">${value.title}</div>
-                        <div class="cardRating">Rating: ${value.rating}/10</div>
-                        <div class="cardGenre">Genre: ${value.genre}</div>
-                        <div class="cardDirector">Director: ${value.director}</div>
-                        <div class="cardStaring">Staring: ${value.staring}</div>
-                        <div class="cardTagline">Tagline: "<i>${value.tagline}</i>"</div>
+                        <div class="cardRating"><b>Rating:</b> ${value.rating}/10</div>
+                        <div class="cardGenre"><b>Genre:</b> ${value.genre}</div>
+                        <div class="cardDirector"><b>Director:</b> ${value.director}</div>
+                        <div class="cardStaring"><b>Staring:</b> ${value.staring}</div>
+                        <div class="cardTagline"><b>Tagline:</b> "<i>${value.tagline}</i>"</div>
                     </div>
                     <div class="controls d-flex flex-column">
                         <button type="button" class="btn closeButton" >
@@ -167,7 +169,7 @@ $("#searchBarBtn").on("click",function() {
         movies += `
            <div class="col">
                 <div class="movieItem card bg-transparent text-white border border-2 d-flex flex-row p-3 w-100 h-100" id="${value.id}">
-                    <div class="flex-grow-1 pe-3">
+                    <div class="flex-grow-1 flex-shrink-1 pe-3">
                         <div class="cardTitle fs-5 fw-bolder">${value.title}</div>
                         <div class="cardRating">Rating: ${value.rating}/10</div>
                         <div class="cardGenre">Genre: ${value.genre}</div>
