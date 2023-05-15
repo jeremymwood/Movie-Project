@@ -4,7 +4,7 @@
 const url = 'https://round-puffy-blizzard.glitch.me/movies';
 let allMovies;
 let movies;
-
+//comment
 //reusable function for generating movie cards
 function makeMovieCards(value){
    movies += `
